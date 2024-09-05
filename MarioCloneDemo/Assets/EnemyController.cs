@@ -19,7 +19,11 @@ public class EnemyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(3 * Vector2.left * Time.deltaTime);
+        transform.Translate(5 * Vector2.left * Time.deltaTime);
+        Vector3 charScale = transform.localScale;
+        charScale.x += 2 * Time.deltaTime;
+        charScale.y += 2 * Time.deltaTime;
+        transform.localScale = charScale;
     }
 
 }
