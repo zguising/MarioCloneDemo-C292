@@ -8,6 +8,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float moveSpeed;
     [SerializeField] float jumpForce;
 
+    public bool isGrounded = true;
+
     private Rigidbody2D rb;
 
     // Start is called before the first frame update
@@ -23,7 +25,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         Move();
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetButtonDown("Jump") && isGrounded == true)
         {
             Jump();
         }
@@ -38,5 +40,23 @@ public class PlayerController : MonoBehaviour
     private void Jump()
     {
         rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+        isGrounded = false;
     }
+
+    //public void OnCollisionEnter2d(Collision2D collision)
+    //{
+    //    if (collision.gameObject.tag == "Ground")
+    //    {
+    //        isGrounded = true;
+    //        Debug.Log("true");
+    //    }
+    //}
+    //public void OnCollisionExit2d(Collision2D collision)
+    //{
+    //    if (collision.gameObject.tag == "Ground")
+    //    {
+    //        isGrounded = false;
+    //        Debug.Log("false");
+    //    }
+    //}
 }

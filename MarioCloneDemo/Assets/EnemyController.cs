@@ -21,9 +21,9 @@ public class EnemyController : MonoBehaviour
     {
         transform.Translate(5 * Vector2.left * Time.deltaTime);
         Vector3 charScale = transform.localScale;
-        charScale.x += 2 * Time.deltaTime;
-        charScale.y += 2 * Time.deltaTime;
-        transform.localScale = charScale;
+        //charScale.x += 2 * Time.deltaTime;
+        //charScale.y += 2 * Time.deltaTime;
+        //transform.localScale = charScale;
     }
 
 }
